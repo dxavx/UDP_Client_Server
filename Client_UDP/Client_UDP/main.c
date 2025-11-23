@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <arpa/inet.h>
 #include <sys/socket.h>
+#include <unistd.h>
 
 #define SERVER "127.0.0.1"
 #define BUFLEN 512
@@ -17,7 +18,7 @@ void die(char *s)
 int main(int argc, const char * argv[]) {
 
     struct sockaddr_in si_other;
-    int s, i, slen=sizeof(si_other);
+    int s, slen=sizeof(si_other);
     char buf[BUFLEN];
     char message[BUFLEN];
     
@@ -56,6 +57,5 @@ int main(int argc, const char * argv[]) {
         puts(buf);
         
     }
-    close(s);
     return 0;
 }
