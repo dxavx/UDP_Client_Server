@@ -38,8 +38,8 @@ int main(int argc, const char * argv[]) {
     }
     
     while (1) {
-        printf("Enter message");
-        gets(message);
+        printf("Enter message: ");
+        fgets(message, 10, stdin);
         
 
         if (sendto(s, message, strlen(message), 0, (struct sockaddr *) &si_other, slen) == -1)
